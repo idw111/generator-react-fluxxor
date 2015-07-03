@@ -1,0 +1,28 @@
+{
+  "name": "generator-react-fluxxor",
+  "version": "1.0.0",
+  "description": "generator for scaffolding webapp built on react and fluxxor",
+  "main": "index.js",
+  "files": [
+  	"client",
+  	"router"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idw111/generator-react-fluxxor.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "generator",
+    "react",
+    "fluxxor"
+  ],
+  "author": "idw111 <idw111@gmail.com> (https://twitter.com/idw1)",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^0.20.1"
+  }
+}
