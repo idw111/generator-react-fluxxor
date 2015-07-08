@@ -1,13 +1,13 @@
 #  [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> generator for scaffolding webapp built on express, react and fluxxor
+> generator for webapp built on express, react and fluxxor
 
 # generator-react-fluxxor
 - express & react & fluxxor
 - gulp & webpack
 - mongoose & redis
-- Authenticate using PassportJS
-- Google Analytics (Set ga_uid at /client/analytics.js)
+- authenticate using PassportJS
+- google analytics (set ga_uid at /client/analytics.js)
 
 # todo
 - add gulpfile.js
