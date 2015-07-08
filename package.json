@@ -4,8 +4,9 @@
   "description": "generator for scaffolding webapp built on react and fluxxor",
   "main": "index.js",
   "files": [
-  	"client",
-  	"router"
+    "app",
+    "client",
+    "router"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +24,7 @@
   "author": "idw111 <idw111@gmail.com> (https://twitter.com/idw1)",
   "license": "MIT",
   "dependencies": {
+    "async": "^1.3.0",
     "yeoman-generator": "^0.20.1"
   }
 }
