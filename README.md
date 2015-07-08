@@ -1,10 +1,9 @@
 #  [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> generator for scaffolding webapp built on react and fluxxor
+> generator for scaffolding webapp built on express, react and fluxxor
 
 # generator-react-fluxxor
-This generator adds react & fluxxor scaffolding to already generated express.js scaffolding
-Run this generator right after running express generator
+Express + React + Fluxxor
 
 
 
