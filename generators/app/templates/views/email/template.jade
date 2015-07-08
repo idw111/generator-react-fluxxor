@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+html(xmlns="http://www.w3.org/1999/xhtml")
+	head
+		meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title #{title}
+		style(media='screen', type='text/css')
+			| #outlook a {padding:0;}
+			| * {font-family: 'Apple SD Gothic Neo', '애플 SD 산돌고딕 Neo', NanumBarunGothic, '나눔바른고딕', NanumGothic, '나눔고딕', sans-serif;}
+			| body {width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0;}
+			| .ExternalClass {width:100%;}
+			| .ExternalClass, 
+			| .ExternalClass p, 
+			| .ExternalClass span, 
+			| .ExternalClass font, 
+			| .ExternalClass td, 
+			| .ExternalClass div {line-height: 1;}
+			| img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
+			| a img {border:none;} 
+			| .image_fix {display:block;}
+			| p.email-body {clear: both; margin: 0 0 .5em; padding: 0; line-height: 1.5; color: #75544b; font-size: 16px;}
+			| table td {border-collapse: collapse;}
+			| table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+			| @media only screen and (max-device-width: 480px) {
+			|	a[href^="tel"], a[href^="sms"] {
+			|		text-decoration: none;
+			|		color: black;
+			|		pointer-events: none;
+			|		cursor: default;
+			|	}
+			|	.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+			|		text-decoration: default;
+			|		color: orange !important; /* or whatever your want */
+			|		pointer-events: auto;
+			|		cursor: default;
+			|	}
+			| }
+			| @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			| 	a[href^="tel"], a[href^="sms"] {
+			| 		text-decoration: none;
+			| 		color: blue; /* or whatever your want */
+			| 		pointer-events: none;
+			| 		cursor: default;
+			| 	}
+			| 	.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+			| 		text-decoration: default;
+			| 		color: orange !important;
+			| 		pointer-events: auto;
+			| 		cursor: default;
+			| 	}
+			| }
+	body
+		block body
