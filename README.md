@@ -7,7 +7,7 @@
 - express & react & fluxxor
 - gulp & webpack
 - mongoose & redis
-- authenticate using PassportJS
+- authenticate using passport.js
 - google analytics (set ga_uid at /client/analytics.js)
 - error reporting to slack (set slack token and etc at /routes/error/slack.js)
 
