@@ -9,7 +9,7 @@
 - mongoose & redis
 - authenticate using PassportJS
 - google analytics (set ga_uid at /client/analytics.js)
-
+- error reporting to slack (set slack token and etc at /routes/error/slack.js)
 
 # install
 

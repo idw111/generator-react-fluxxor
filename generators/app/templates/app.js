@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var RedisStore = require('connect-redis')(session);
 var config = require('./config');
 var redis = require('redis').createClient(config.redis.port, config.redis.host);
-
+var less = require('less-middleware');
 var app = express();
 
 // view engine setup
@@ -19,10 +19,7 @@ app.set('view engine', 'jade');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-	extended: false
-}));
-
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(session({
 	secret: '<%= appName %>',
@@ -32,7 +29,10 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-app.use(require('less-middleware')(path.join(__dirname, 'public'), {compiler: {sourceMap: true}}));
+app.use(less(path.join(__dirname, 'client'), {
+	dest: path.join(__dirname, 'public'),
+	compiler: {sourceMap: true}
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 <% if (usePassport) { %>
@@ -42,7 +42,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 <% } %>
 
-// router setup
+// router
 app.use('/', require('./routes/router'));
 
 // catch 404 and forward to error handler

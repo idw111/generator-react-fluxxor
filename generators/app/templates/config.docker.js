@@ -11,13 +11,13 @@ var config = {
 	},
 
 	redis: {
-		host: 'localhost',
+		host: 'redis',
 		port: 6379,
 		url: function() { return config.redis.host + ':' + config.redis.port; }
 	},
 
 	mongo: {
-		host: 'localhost',
+		host: 'mongo',
 		port: 27017,
 		database: '<%= appName %>',
 		connect: function(done) { mongoose.connect('mongodb://' + config.mongo.url() + '/' + config.mongo.database, done); },

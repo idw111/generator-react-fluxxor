@@ -5,7 +5,7 @@ var webpack = {
 	cache: true,
 	
 	entry: [
-		path.resolve('./client/main.js'),
+		path.resolve('./client/javascripts/main.js'),
 	],
 	
 	output: {

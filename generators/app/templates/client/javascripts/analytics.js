@@ -8,7 +8,6 @@ if (ga_uid) {
 var AnalyticsAction = {
 
 	setUser: function(userId) {
-		if (!ga_uid) return;
 		if (window.ga_uid || !userId) return;
 		window.ga_uid = userId;
 
@@ -17,7 +16,6 @@ var AnalyticsAction = {
 	},
 
 	sendPageview: function(page, title) {
-		if (!ga_uid) return;
 		if (!page) return;
 		
 		var ga = window.ga || function() {};
