@@ -10,6 +10,7 @@
 - authenticate using PassportJS
 - google analytics (set ga_uid at /client/analytics.js)
 
+
 # install
 
 ```sh
@@ -21,6 +22,7 @@ $ npm install -g generator-react-fluxxor
 
 - add gulpfile.js
 - add test (http://yeoman.io/authoring/testing.html) and configure travis-ci
+
 
 ## License
 
