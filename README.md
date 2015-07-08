@@ -3,10 +3,15 @@
 > generator for scaffolding webapp built on express, react and fluxxor
 
 # generator-react-fluxxor
-Express + React + Fluxxor
+- express & react & fluxxor
+- gulp & webpack
+- mongoose & redis
+- Authenticate using PassportJS
+- Google Analytics (Set ga_uid at /client/analytics.js)
 
-
-
+# todo
+- add gulpfile.js
+- add test
 
 ## License
 
