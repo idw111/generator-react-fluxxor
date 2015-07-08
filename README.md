@@ -11,7 +11,7 @@
 
 # todo
 - add gulpfile.js
-- add test
+- add test (http://yeoman.io/authoring/testing.html) and configure travis-ci
 
 ## License
 
