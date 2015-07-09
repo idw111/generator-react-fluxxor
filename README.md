@@ -20,6 +20,7 @@ $ npm install -g generator-react-fluxxor
 
 # todo
 
+- add react login/signup
 - add test (http://yeoman.io/authoring/testing.html) and configure travis-ci
 
 
