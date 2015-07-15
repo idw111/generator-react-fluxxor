@@ -21,12 +21,12 @@ $ npm install -g generator-react-fluxxor
 # todo
 
 - add react login/signup
-- add test (http://yeoman.io/authoring/testing.html) and configure travis-ci
+- add test (<http://yeoman.io/authoring/testing.html>) and configure travis-ci
 
 
 ## License
 
-MIT © [Dongwon Lim](idw111@gmail.com)
+MIT © [Dongwon Lim](./LICENSE)
 
 [npm-image]: https://badge.fury.io/js/generator-react-fluxxor.svg
 [npm-url]: https://npmjs.org/package/generator-react-fluxxor
