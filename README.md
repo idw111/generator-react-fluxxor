@@ -23,6 +23,9 @@ $ npm install -g generator-react-fluxxor
 ## After Install
 
 ```sh
+$ mkdir project-directory
+$ cd project-directory
+$ yo react-fluxxor
 $ npm install
 ```
 
