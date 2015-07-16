@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = {
-	app: require('./generators/app')
+	app: require.resolve('./generators/app')
 };

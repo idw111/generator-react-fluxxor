@@ -1,6 +1,6 @@
 {
   "name": "generator-react-fluxxor",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "generator for webapp built on express, react and fluxxor",
   "main": "index.js",
   "files": [
@@ -17,12 +17,13 @@
   },
   "keywords": [
     "yeoman-generator",
+    "scaffold",
     "generator",
     "express",
     "react",
     "fluxxor"
   ],
-  "author": "idw111 <idw111@gmail.com> (https://twitter.com/idw1)",
+  "author": "Dongwon Lim <idw111@gmail.com> (https://twitter.com/idw1)",
   "license": "MIT",
   "dependencies": {
     "async": "^1.3.0",
