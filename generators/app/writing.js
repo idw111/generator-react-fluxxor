@@ -16,6 +16,8 @@ var writing = {
 		this.fs.copyTpl(this.templatePath('config.docker.js'), this.destinationPath('config.docker.js'), this.config.getAll());
 		// webpack.config.js
 		this.fs.copyTpl(this.templatePath('webpack.config.js'), this.destinationPath('webpack.config.js'));
+		// gulpfile.js
+		this.fs.copyTpl(this.templatePath('gulpfile.js'), this.destinationPath('gulpfile.js'));
 	},
 
 	writeMain: function() {

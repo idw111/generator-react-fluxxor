@@ -1,27 +1,38 @@
-#  [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 > generator for webapp built on express, react and fluxxor
 
-# generator-react-fluxxor
+
+## generator-react-fluxxor
 
 - express & react & fluxxor
 - gulp & webpack
 - mongoose & redis
 - authenticate using passport.js
 - google analytics (set ga_uid at /client/analytics.js)
-- error reporting to slack (set slack token and etc at /routes/error/slack.js)
+- error reporting to slack (set slack token, channel, and username at /routes/error/slack.js)
 
-# install
+
+## install
 
 ```sh
 $ npm install -g generator-react-fluxxor
 ```
 
 
-# todo
+## after install
+
+```sh
+$ npm install
+```
+
+- install dependencies
+- set git repository
+
+
+## todo
 
 - add react login/signup
-- add test (<http://yeoman.io/authoring/testing.html>) and configure travis-ci
 
 
 ## License

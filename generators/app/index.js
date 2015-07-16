@@ -11,8 +11,7 @@ var Base = generators.Base.extend({
 module.exports = Base.extend({
 
 	initializing: function() {
-		// check if there is a package.json file
-		// and if it has a dependency on express
+
 	},
 
 	prompting: require('./prompting'),

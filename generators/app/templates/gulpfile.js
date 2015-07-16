@@ -3,6 +3,10 @@ var install = require('gulp-install');
 var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
 
+gulp.task('default', ['uglify'], function() {
+	console.log('built!');
+});
+
 gulp.task('build', ['uglify'], function() {
 	console.log('built!');
 });
