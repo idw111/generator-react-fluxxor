@@ -1,12 +1,11 @@
 {
   "name": "generator-react-fluxxor",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "generator for webapp built on express, react and fluxxor",
   "main": "index.js",
   "files": [
-    "app",
-    "client",
-    "router"
+    "index.js",
+    "generators"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
