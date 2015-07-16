@@ -1,6 +1,6 @@
 {
   "name": "generator-react-fluxxor",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "generator for webapp built on express, react and fluxxor",
   "main": "index.js",
   "files": [

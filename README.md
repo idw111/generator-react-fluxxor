@@ -13,26 +13,22 @@
 - error reporting to slack (set slack token, channel, and username at /routes/error/slack.js)
 
 
-## install
+## Install
 
 ```sh
 $ npm install -g generator-react-fluxxor
 ```
 
 
-## after install
+## After Install
 
 ```sh
 $ npm install
 ```
 
-- install dependencies
-- set git repository
-
-
-## todo
-
-- add react login/signup
+- execute in a project directory
+- install dependencies by yourself
+- set git repository by yourself
 
 
 ## License
