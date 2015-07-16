@@ -7,7 +7,7 @@ var writing = {
 
 	writeGitignore: function() {
 		// .gitignore
-		this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+		this.fs.copyTpl(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
 	},
 
 	writeConfig: function() {
