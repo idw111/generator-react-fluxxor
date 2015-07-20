@@ -3,8 +3,7 @@
 var SessionMixin = {
 
 	shouldRender: function(session) {
-		if (!this.context || !this.context.router) return false;
-
+		if (!this.context || !this.context.router || !session) return false;
 		var isActive = this.context.router.isActive;
 		var transitionTo = this.context.router.transitionTo;
 
@@ -12,7 +11,7 @@ var SessionMixin = {
 		if (!session.loaded) return false;
 
 		// authentication
-		if (!session.authenticated) return isActive('Authentication') ? true : transitionTo('/auth/index');
+		if (!session.authenticated) return isActive('Authentication') ? true : transitionTo('/auth/login');
 
 		return isActive('Application') ? true : transitionTo('/');
 	}

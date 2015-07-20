@@ -7,7 +7,7 @@ var RouteHandler = Router.RouteHandler;
 var SessionMixin = require('./mixins/SessionMixin');
 
 var Application = React.createClass({
-	
+
 	contextTypes: {
 		router: React.PropTypes.func
 	},
@@ -21,6 +21,7 @@ var Application = React.createClass({
 	},
 
 	render: function() {
+		if (!this.shouldRender(this.state.session)) return null;
 		return (
 			<div className='application'>
 				<RouteHandler />
