@@ -4,8 +4,9 @@ var express = require('express');
 var router = express.Router();
 var async = require('async');
 var User = require('../../models/User');
+var passport = require('../../passport');
 
-router.post('/login', function(req, res) {
+router.post('/login', function(req, res, next) {
 	passport.authenticate('local', function(err, user, info) {
 		if (err) return res.json({ok: true, user: null});
 		async.waterfall([
