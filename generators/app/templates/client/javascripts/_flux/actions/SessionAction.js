@@ -13,18 +13,24 @@ var SessionAction = {
 	signup: function(username, password, nickname, email) {
 		SessionClient.signup(username, password, nickname, email, function(result) {
 			if (!result.ok) return;
-			if (result.user) AnalyticsClient.setUser(result.user._id);
 			this.flux.actions.SESSION.load();
 			this.dispatch(constants.SESSION.SIGNUP, {user: result.user || null});
+			if (result.user) {
+				AnalyticsClient.setUser(result.user._id);
+				this.flux.actions.ROUTE.transitionTo('/');
+			}
 		}.bind(this));
 	},
 
 	login: function(username, password) {
 		SessionClient.login(username, password, function(result) {
 			if (!result.ok) return;
-			if (result.user) AnalyticsClient.setUser(result.user._id);
 			this.flux.actions.SESSION.load();
 			this.dispatch(constants.SESSION.LOGIN, {user: result.user || null});
+			if (result.user) {
+				AnalyticsClient.setUser(result.user._id);
+				this.flux.actions.ROUTE.transitionTo('/');
+			}
 		}.bind(this));
 	},
 
@@ -38,9 +44,9 @@ var SessionAction = {
 	check: function() {
 		SessionClient.check(function(result) {
 			if (!result.ok) return;
-			if (result.user) AnalyticsClient.setUser(result.user._id);
 			this.flux.actions.SESSION.load();
 			this.dispatch(constants.SESSION.CHECK, {user: result.user || null});
+			if (result.user) AnalyticsClient.setUser(result.user._id);
 		}.bind(this));
 	}
 

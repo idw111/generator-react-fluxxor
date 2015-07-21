@@ -2,6 +2,8 @@ var React = require('react');
 var Fluxxor = require('fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link
 var Input = require('../../components/Input');
 var Button = require('../../components/Button');
 
@@ -15,9 +17,7 @@ var Signup = React.createClass({
 
     componentDidUpdate: function(prevProps, prevState) {
         if (this.state.sending) {
-            setTimeout(function() {
-                this.setState({sending: false});
-            }.bind(this), 500);
+            this.setState({sending: false});
         }
     },
 
@@ -29,6 +29,7 @@ var Signup = React.createClass({
 				<Input caption='nickname' ref='nickname' />
 				<Input caption='email' ref='email' type='email' />
                 <Button disabled={this.state.sending} onTouchTap={this.signup}>signup</Button>
+                <Link to='/auth/login'>login</Link>
             </div>
 		);
 	},
