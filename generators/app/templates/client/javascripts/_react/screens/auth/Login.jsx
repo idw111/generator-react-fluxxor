@@ -1,27 +1,31 @@
 var React = require('react');
+var Fluxxor = require('fluxxor');
+var FluxMixin = Fluxxor.FluxMixin(React);
+var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Input = require('../../components/Input');
 var Button = require('../../components/Button');
 
 var Login = React.createClass({
 
-    getInitialState: function() {
-        return {
-            sending: false
-        };
+    mixins: [FluxMixin, StoreWatchMixin('SESSION')],
+
+    getStateFromFlux: function() {
+        return this.getFlux().store('SESSION').getState();
     },
 
     componentDidUpdate: function(prevProps, prevState) {
         if (this.state.sending) {
             setTimeout(function() {
                 this.setState({sending: false});
-            }.bind(this), 1000);
+            }.bind(this), 500);
         }
     },
 
 	render: function() {
 		return (
 			<div className='login'>
-                <Input caption='test' defaultValue='test2' ref='test' />
+                <Input caption='username' ref='username' />
+                <Input caption='password' ref='password' type='password' />
                 <Button disabled={this.state.sending} onTouchTap={this.login}>login</Button>
             </div>
 		);
@@ -29,8 +33,10 @@ var Login = React.createClass({
 
     login: function(e) {
         e.preventDefault();
+        var username = this.refs.username.getValue();
+        var password = this.refs.password.getValue();
+        this.getFlux().actions.SESSION.login(username, password);
         this.setState({sending: true});
-        console.log('login', this.refs.test.getValue());
     }
 
 });

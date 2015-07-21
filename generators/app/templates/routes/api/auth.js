@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var async = require('async');
+var User = require('../../models/User');
 
 router.post('/login', function(req, res) {
 	passport.authenticate('local', function(err, user, info) {
@@ -64,7 +65,7 @@ router.post('/signup', function(req, res) {
 		User.findOneAndRemove({username: username}, function(err) {
 			return res.json({ok: true, user: null});
 		});
-	});	
+	});
 });
 
 router.get('/check', function(req, res) {

@@ -11,7 +11,7 @@ var SessionAction = {
 	},
 
 	signup: function(username, password, nickname, email) {
-		SignupClient.signup(username, password, nickname, email, function(result) {
+		SessionClient.signup(username, password, nickname, email, function(result) {
 			if (!result.ok) return;
 			if (result.user) AnalyticsClient.setUser(result.user._id);
 			this.flux.actions.SESSION.load();

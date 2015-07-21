@@ -43,22 +43,18 @@ UserSchema.statics.register = function(username, password, nickname, email, done
 		if (!username) return done(new Error('username is empty'));
 		if (!password) return done(new Error('password is empty'));
 	}
-	
+
 	nickname = nickname || username;
 	email = email || '';
 
 	this.findOne({username: username.toLowerCase(), provider: UserProvider.LOCAL}, function(err, user) {
 		if (err) return done(err);
-		if (!user) {
-			user = new User({username: username, nickname: nickname, password: bcrypt.hashSync(password), provider: UserProvider.LOCAL, email: email});
-			user.save(function(err) {
-				if (err) return done(err);
-				return done(null, user);
-			});
-		}
-		else {
-			return done(new Error('username already exists'));
-		}
+		if (user) return done(new Error('username already exists'));
+		user = new User({username: username, nickname: nickname, password: bcrypt.hashSync(password), email: email, provider: UserProvider.LOCAL});
+		user.save(function(err, user) {
+			if (err) return done(err);
+			return done(null, user);
+		});
 	});
 };
 

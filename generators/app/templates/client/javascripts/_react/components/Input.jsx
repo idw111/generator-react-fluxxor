@@ -22,7 +22,7 @@ var Input = React.createClass({
 		if (this.props.className) classes.push(this.props.className);
 		if (this.state.disabled) classes.push('disabled');
 
-		var input = this.state.disabled ? (<span>{this.state.caption}</span>) : (<input type='text' value={this.state.value} onChange={this.onChange} />);
+		var input = this.state.disabled ? (<span>{this.state.caption}</span>) : (<input placeholder={this.state.caption} type={this.props.type || 'text'} value={this.state.value} onChange={this.onChange} />);
 
 		return (
 			<div className={classes.join(' ')}>{input}</div>
