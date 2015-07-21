@@ -20,13 +20,15 @@ $ npm install -g generator-react-fluxxor
 ```
 
 
-## After Install
+## Usage
 
 ```sh
 $ mkdir project-directory
 $ cd project-directory
 $ yo react-fluxxor
 $ npm install
+$ npm run webpack
+$ nodemon index.js
 ```
 
 - execute in a project directory
