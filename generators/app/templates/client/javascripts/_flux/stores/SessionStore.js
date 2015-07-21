@@ -5,12 +5,12 @@ var constants = require('../constants');
 
 var Immutable = require('immutable');
 var Profile = Immutable.Record({
-	username: null, 
-	nickname: 'anonymous', 
-	provider: null, 
-	email: null, 
-	photo: null, 
-	verified: false, 
+	username: null,
+	nickname: 'anonymous',
+	provider: null,
+	email: null,
+	photo: null,
+	verified: false,
 	registeredAt: null
 });
 
@@ -23,7 +23,7 @@ var SessionStore = Fluxxor.createStore({
 			constants.SESSION.LOGOUT, this.onLogout,
 			constants.SESSION.SIGNUP, this.onSignup
 		);
-		
+
 		this.clear();
 	},
 
@@ -65,14 +65,14 @@ var SessionStore = Fluxxor.createStore({
 			loaded: this.loaded,
 			authenticated: this.authenticated,
 			verified: !!this.profile.get('verified'),
-			profile: this.profile
+			profile: this.profile.toJSON()
 		};
 	},
 
 	getProfile: function() {
-		return this.profile.clone();
+		return this.profile.toJSON();
 	}
-	
+
 });
 
 module.exports = SessionStore;
