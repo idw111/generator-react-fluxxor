@@ -25,6 +25,7 @@ UserSchema.options.toJSON = {
 		delete ret.__v;
 		delete ret.password;
 		delete ret.verificationCode;
+		ret.registeredAt = ret.registeredAt.getTime();
 		return ret;
 	}
 };
