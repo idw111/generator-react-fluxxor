@@ -22,15 +22,15 @@ var prompting = {
 		this.prompt({
 			type: 'confirm',
 			name: 'passport',
-			message: 'use passport',
+			message: 'social login',
 		}, function(answer) {
-			this.config.set('usePassport', answer.passport);
+			this.config.set('useSocialLogin', answer.passport);
 			return done();
 		}.bind(this));
 	},
 
 	askFacebookClientId: function() {
-		if (!this.config.get('usePassport')) return;
+		if (!this.config.get('useSocialLogin')) return;
 		var done = this.async();
 		this.prompt({
 			type: 'input',
@@ -45,7 +45,7 @@ var prompting = {
 	},
 
 	askFacebookClientSecret: function() {
-		if (!this.config.get('usePassport')) return;
+		if (!this.config.get('useSocialLogin')) return;
 		if (!this.config.get('facebookClientId')) return;
 		var done = this.async();
 		this.prompt({
@@ -61,7 +61,7 @@ var prompting = {
 	},
 
 	askKakaoClientId: function() {
-		if (!this.config.get('usePassport')) return;
+		if (!this.config.get('useSocialLogin')) return;
 		var done = this.async();
 		this.prompt({
 			type: 'input',
@@ -76,7 +76,7 @@ var prompting = {
 	},
 
 	askKakaoClientSecret: function() {
-		if (!this.config.get('usePassport')) return;
+		if (!this.config.get('useSocialLogin')) return;
 		if (!this.config.get('kakaoClientId')) return;
 		var done = this.async();
 		this.prompt({

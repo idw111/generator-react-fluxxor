@@ -24,6 +24,8 @@ var routes = (
 			<DefaultRoute handler={Login} />
 			<Route name='Login' path='login' handler={Login} />
 			<Route name='Signup' path='signup' handler={Signup} />
+			<Route name='_Login' path='/login' handler={Login} />
+			<Route name='_Signup' path='/signup' handler={Signup} />
 		</Route>
 	</Route>
 );

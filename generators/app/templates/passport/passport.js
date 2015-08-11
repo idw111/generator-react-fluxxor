@@ -3,7 +3,7 @@ var User = require('./models/User');
 var UserProvider = require('./enum/UserProvider');
 var async = require('async');
 
-<% if (facebookClientId) { %>
+<% if (useSocialLogin && !!facebookClientId) { %>
 var FacebookStrategy = require('passport-facebook').Strategy;
 passport.use(new FacebookStrategy({
 	clientID: '<%= facebookClientId %>',
@@ -47,7 +47,7 @@ passport.use(new FacebookStrategy({
 }));
 <% } %>
 
-<% if (kakaoClientId) { %>
+<% if (useSocialLogin && !!kakaoClientId) { %>
 var KakaoStrategy = require('passport-kakao').Strategy;
 passport.use(new KakaoStrategy({
 	clientID: '<%= kakaoClientId %>',
@@ -60,10 +60,10 @@ passport.use(new KakaoStrategy({
 				if (err) return done(err);
 				if (user) return done(null, user);
 				user = new User({
-					username: profile.id, 
-					nickname: profile.username, 
-					email: null, 
-					photo: profile._json.properties.thumbnail_image || null, 
+					username: profile.id,
+					nickname: profile.username,
+					email: null,
+					photo: profile._json.properties.thumbnail_image || null,
 					provider: UserProvider.KAKAO
 				});
 				user.save(function(err, user) {
@@ -81,7 +81,7 @@ passport.use(new KakaoStrategy({
 
 var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy({
-	usernameField: 'username', 
+	usernameField: 'username',
 	passwordField: 'password'
 }, function(username, password, done) {
 	User.validate(username, password, function(err, user) {

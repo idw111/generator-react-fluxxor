@@ -25,7 +25,7 @@ app.use(session({
 	secret: '<%= appName %>',
 	maxAge: 1000 * 60 * 60 * 24 * 30,
 	store: new RedisStore({host: config.redis.host, port: config.redis.port, client: redis}),
-	resave: true, 
+	resave: true,
 	saveUninitialized: true
 }));
 
@@ -35,7 +35,7 @@ app.use(less(path.join(__dirname, 'client'), {
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-<% if (usePassport) { %>
+<% if (useSocialLogin) { %>
 // passport
 var passport = require('./passport');
 app.use(passport.initialize());

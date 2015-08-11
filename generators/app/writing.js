@@ -58,8 +58,8 @@ var writing = {
 
 	writePassport: function() {
 		// passport.js
-		if (!this.config.get('usePassport')) return;
 		this.fs.copyTpl(this.templatePath('passport/passport.js'), this.destinationPath('passport.js'), this.config.getAll());
+		if (!this.config.get('useSocialLogin')) return;
 		this.fs.copy(this.templatePath('passport/auth/'), this.destinationPath('routes/auth/'));
 	}
 
