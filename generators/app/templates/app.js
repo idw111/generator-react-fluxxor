@@ -11,6 +11,7 @@ var RedisStore = require('connect-redis')(session);
 var config = require('./config');
 var redis = require('redis').createClient(config.redis.port, config.redis.host);
 var less = require('less-middleware');
+var passport = require('./passport');
 var app = express();
 
 // view engine setup
@@ -35,12 +36,9 @@ app.use(less(path.join(__dirname, 'client'), {
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-<% if (useSocialLogin) { %>
 // passport
-var passport = require('./passport');
 app.use(passport.initialize());
 app.use(passport.session());
-<% } %>
 
 // router
 app.use('/', require('./routes/router'));
