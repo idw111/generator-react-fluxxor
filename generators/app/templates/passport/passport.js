@@ -1,7 +1,7 @@
+var async = require('async');
 var passport = require('passport');
 var User = require('./models/User');
 var UserProvider = require('./enum/UserProvider');
-var async = require('async');
 
 <% if (useSocialLogin && !!facebookClientId) { %>
 var FacebookStrategy = require('passport-facebook').Strategy;
